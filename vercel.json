@@ -1,0 +1,7 @@
+{
+  "framework": "vite",
+  "rewrites": [
+    { "source": "/studio/:path*", "destination": "/studio/:path*" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
