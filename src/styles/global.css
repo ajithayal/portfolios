@@ -299,7 +299,7 @@ ol, ul { list-style: none; }
 .ct-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 .ct-media { position: relative; min-height: 300px; }
 .ct-sticker { position: absolute; right: -4%; bottom: calc(-1 * clamp(32px, 5vw, 72px)); height: 138%; width: auto; max-width: none; filter: drop-shadow(0 20px 30px rgba(48, 34, 31, 0.25)); transform-origin: 50% 100%; }
-.ct-bubble { position: absolute; z-index: 2; left: -6%; top: -16%; font-size: 30px; padding: 6px 18px; border-radius: 20px; background: var(--white); color: var(--ink); box-shadow: var(--shadow); transform: rotate(-6deg); }
+.ct-bubble { position: absolute; z-index: 2; left: -18%; top: -16%; font-size: 30px; padding: 6px 18px; border-radius: 20px; background: var(--white); color: var(--ink); box-shadow: var(--shadow); transform: rotate(-6deg); }
 .ct-bubble::after { content: ''; position: absolute; right: 24px; bottom: -8px; width: 16px; height: 16px; background: var(--white); transform: rotate(45deg); border-radius: 3px; }
 .foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 34px 6px 10px; font-size: 14px; color: var(--muted); }
 .foot .hand { font-size: 24px; color: var(--coral-d); }
@@ -340,7 +340,7 @@ ol, ul { list-style: none; }
   .ct-card { grid-template-columns: 1fr; margin-top: 4vh; }
   .ct-media { min-height: 360px; }
   .ct-sticker { right: 50%; translate: 50% 0; height: 110%; }
-  .ct-bubble { left: 4%; top: 2%; }
+  .ct-bubble { left: -2%; top: 0%; }
   .foot { justify-content: center; text-align: center; }
 }
 @media (prefers-reduced-motion: reduce) {
