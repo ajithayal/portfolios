@@ -9,9 +9,12 @@ function PhotoStack() {
   const [order, setOrder] = useState(about.photos.map((_, i) => i))
   const stack = useRef(null)
   const next = () => {
+    if (!stack.current) return
     const top = stack.current.querySelector(`[data-i="${order[0]}"]`)
+    if (!top) return
+    const shiftX = window.innerWidth < 480 ? 140 : 260
     gsap.timeline()
-      .to(top, { x: 260, y: -40, rotate: 18, duration: 0.35, ease: 'power2.in' })
+      .to(top, { x: shiftX, y: -40, rotate: 18, duration: 0.35, ease: 'power2.in' })
       .add(() => setOrder((o) => [...o.slice(1), o[0]]))
       .to(top, { x: 0, y: 0, rotate: 0, duration: 0.5, ease: 'back.out(1.6)' })
   }

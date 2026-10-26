@@ -12,8 +12,10 @@ export default function Skills() {
   const board = useRef(null)
 
   const layout = (animate) => {
+    if (!board.current) return
     const els = gsap.utils.toArray('.skill', board.current)
-    const flow = innerWidth < 700
+    if (!els.length) return
+    const flow = window.innerWidth < 768
     board.current.classList.toggle('flow', flow)
     if (flow) {
       board.current.style.height = ''
@@ -21,12 +23,23 @@ export default function Skills() {
         const parent = board.current
         els.sort(() => Math.random() - 0.5).forEach((el) => parent.appendChild(el))
       }
-      els.forEach((el, k) => gsap.to(el, { x: 0, y: 0, xPercent: 0, yPercent: 0, rotate: animate ? gsap.utils.random(-8, 8) : ((k * 29) % 13) - 6, duration: animate ? 0.8 : 0, ease: 'elastic.out(1, 0.6)' }))
+      els.forEach((el, k) => {
+        gsap.set(el, { clearProps: 'left,top' })
+        gsap.to(el, {
+          x: 0,
+          y: 0,
+          xPercent: 0,
+          yPercent: 0,
+          rotate: animate ? gsap.utils.random(-8, 8) : ((k * 29) % 13) - 6,
+          duration: animate ? 0.8 : 0,
+          ease: 'elastic.out(1, 0.6)',
+        })
+      })
       return
     }
-    const cols = innerWidth < 700 ? 3 : innerWidth < 1100 ? 4 : 5
+    const cols = window.innerWidth < 960 ? 3 : window.innerWidth < 1200 ? 4 : 5
     const rows = Math.ceil(els.length / cols)
-    const rowH = innerWidth < 700 ? 66 : 92
+    const rowH = window.innerWidth < 960 ? 76 : 92
     board.current.style.height = `${rows * rowH + 60}px`
     const order = els.map((_, i) => i)
     if (animate) order.sort(() => Math.random() - 0.5)
