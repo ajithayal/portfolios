@@ -38,8 +38,8 @@ export default function Contact() {
             </div>
           </div>
           <div className="ct-media">
-            <span className="ct-bubble hand">say hi! 👋</span>
-            <img className="ct-sticker" src={contactSticker} alt={`${profile.name} smiling`} loading="lazy" />
+            <span className="ct-bubble hand" aria-label="Waving hand">👋</span>
+            <img className="ct-sticker" src={contactSticker} alt={`${profile.name} standing`} loading="lazy" />
           </div>
         </div>
         <footer className="foot">

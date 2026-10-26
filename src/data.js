@@ -8,7 +8,7 @@ export const profile = {
   role: 'Senior Infrastructure & HPC Engineer',
   location: 'Chennai, Tamil Nadu, India',
   email: 'ajithlayatech@gmail.com',
-  phone: '+91 95663 77556',
+  phone: '+91 95663 77557',
   intro: 'I design, build, and automate mission-critical enterprise infrastructure, high-density AlmaLinux/Slurm HPC clusters, VMware disaster recovery, and hybrid clouds.',
   github: 'https://github.com/ajithayal',
   linkedin: 'https://www.linkedin.com/in/ajithcloudtech/',
